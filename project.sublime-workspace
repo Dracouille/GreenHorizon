@@ -1,0 +1,261 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"back",
+				"background-position"
+			],
+			[
+				"background-",
+				"background-position"
+			],
+			[
+				"marg",
+				"margin-bottom"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "resources/views/back/layout.blade.php",
+			"settings":
+			{
+				"buffer_size": 15842,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/C/wamp64/www/GreenHorizon",
+		"/C/wamp64/www/GreenHorizon/app",
+		"/C/wamp64/www/GreenHorizon/app/Http",
+		"/C/wamp64/www/GreenHorizon/app/Http/Controllers",
+		"/C/wamp64/www/GreenHorizon/app/Http/Controllers/Back",
+		"/C/wamp64/www/GreenHorizon/app/Http/Middleware",
+		"/C/wamp64/www/GreenHorizon/resources",
+		"/C/wamp64/www/GreenHorizon/resources/views",
+		"/C/wamp64/www/GreenHorizon/resources/views/back"
+	],
+	"file_history":
+	[
+		"/C/wamp64/www/GreenHorizon/resources/views/back/index.blade.php",
+		"/C/wamp64/www/GreenHorizon/resources/views/back/layout.blade.php",
+		"/C/wamp64/www/GreenHorizon/app/Http/Kernel.php",
+		"/C/wamp64/www/GreenHorizon/app/Http/routes.php",
+		"/C/wamp64/www/GreenHorizon/app/Http/Controllers/Back/AdminController.php",
+		"/C/wamp64/www/GreenHorizon/app/Http/Middleware/Admin.php",
+		"/C/wamp64/www/GreenHorizon/resources/views/contact.blade.php",
+		"/C/wamp64/www/GreenHorizon/resources/views/layouts/NavBar.blade.php",
+		"/C/wamp64/www/GreenHorizon/resources/views/layouts/head.blade.php",
+		"/C/wamp64/www/GreenHorizon/public/css/business-casual.css",
+		"/C/wamp64/www/GreenHorizon/public/css/bootstrap.min.css.map",
+		"/C/wamp64/www/GreenHorizon/public/css/bootstrap.css.map",
+		"/C/wamp64/www/GreenHorizon/resources/views/layouts/footer.blade.php"
+	],
+	"find":
+	{
+		"height": 40.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"adminlte.min.js",
+			"adminlte.min.js ",
+			"pull-left image",
+			"The user image in the navbar",
+			"AdminLTE App ",
+			"Main content ",
+			"AdminLTE Skins",
+			"Theme style ",
+			"The user image in the navbar",
+			"pull-left im",
+			"pull-l",
+			"<link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css\" integrity=\"sha384-",
+			".img-left",
+			"img-center",
+			".img-left {\n    float: none;\n    margin: 0 auto 0;\n}",
+			"img-right",
+			"img-c",
+			"img-left",
+			"Architecte Paysagiste",
+			"Green Horizon"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "resources/views/back/layout.blade.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 15842,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								15427,
+								15427
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 5622.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 40.0
+	},
+	"input":
+	{
+		"height": 52.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "project.sublime-project",
+	"replace":
+	{
+		"height": 76.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 180.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
