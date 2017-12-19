@@ -23,10 +23,10 @@ Route::get('/contact', function () {
     return view('contact');
 })->name('contact');
 
-Route::get('/avis', function () {
-    return view('avis');
-})->name('avis');
 
+//Routes Avis
+Route::get('/avis', 'ComController@index')->name('avis');
+//Route::post('/devoir/new', 'DevoirController@store');
 
 //Admin
 Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {

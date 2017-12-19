@@ -16,7 +16,7 @@
             <div class="col-lg-12">
                 <hr>
                 <h2 class="intro-text text-center">
-                    À propos de moi
+                    À propos de nous
                 </h2>
                 <hr>
 

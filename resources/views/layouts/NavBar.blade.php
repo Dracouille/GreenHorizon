@@ -1,6 +1,7 @@
 
-<img style =" width:20% " class="img-responsive img-center" src="{{asset('img/logo.png')}}" alt="logo">
-<div class="brand">Green Horizon</div>
+<img style =" width:30% " class="img-responsive img-center" src="{{asset('img/logo.png')}}" alt="logo">
+{{--<div class="brand" style="visibility:hidden">Green Horizon</div>--}}
+<h1 style="text-indent: -9999px; font-size: small">Green Horizon</h1>
 <!-- <div class="address-bar">Paysagiste</div> -->
 
 <!-- Navigation -->
@@ -22,10 +23,10 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
                 <li>
-                    <a href="{{route('home')}}">Home</a>
+                    <a href="{{route('home')}}">Accueil</a>
                 </li>
                 <li>
-                    <a href="{{route('galerie')}}">Galerie</a>
+                    <a href="{{route('galerie')}}">Photos</a>
                 </li>
                 <li>
                     <a href="{{route('contact')}}">Contact</a>
