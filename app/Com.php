@@ -8,5 +8,6 @@ class Com extends Model
 {
     protected $table = 'commentaires';
     protected $primaryKey = 'ID_com';
+    public $timestamps = false;
 
 }

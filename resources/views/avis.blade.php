@@ -15,13 +15,21 @@
         <div class="box">
 
 
+            {{--Message de confirm--}}
+            @if (session('status'))
+                <div class="alert alert-success">
+                    {{ session('status') }}
+                </div>
+            @endif
+
+
+
             {{--Liste des commentaires--}}
             <hr>
             <h2 class="intro-text text-center">
                 Les commentaires
             </h2>
             <hr>
-
             @foreach($MesCom as $key => $value)
                 <div class="row">
                     <div class="form-group col-sm-10" style="margin-left: 5%; margin-bottom: 40px">
@@ -37,7 +45,6 @@
 
 
 
-
             {{--Poster un message--}}
             <hr>
             <h2 class="intro-text text-center">
@@ -46,25 +53,48 @@
             <hr>
             <br>
 
+            @if (Session::has('message'))
+                <div class="alert alert-info">{{ Session::get('message') }}</div>
+            @endif
+
+            {{--Ouvre le fomulaire--}}
+            {!! Form::open(array('url' => '/avis')) !!}
+            {!! csrf_field() !!}
             <div class="row">
-                <div class="form-group col-sm-6">
+                <div class="form-group col-sm-6 {{ $errors->has('name') ? ' has-error' : '' }}">
                     <label for="name" class="h4">Qui êtes vous ?</label>
-                    <input type="text" class="form-control" id="name" placeholder="Votre nom" required>
+                    {!! Form::text('name', Input::old('name'),['class'=>'form-control']) !!}
+                    @if ($errors->has('name'))
+                        <span class="help-block">
+                            <strong>{{ $errors->first('name') }}</strong>
+                        </span>
+                    @endif
                 </div>
 
-                <div class="form-group col-sm-6">
-                    <label for="email" class="h4">Résumer / Titre</label>
-                    <input type="email" class="form-control" id="titre" placeholder="Titre" required>
+                <div class="form-group col-sm-6 {{ $errors->has('resume') ? ' has-error' : '' }}">
+                    <label for="resume" class="h4">Résumer / Titre</label>
+                    {!! Form::text('resume', Input::old('resume'),['class'=>'form-control']) !!}
+                    @if ($errors->has('resume'))
+                        <span class="help-block">
+                            <strong>{{ $errors->first('resume') }}</strong>
+                        </span>
+                    @endif
                 </div>
             </div>
 
-            <div class="form-group">
+            <div class="form-group {{ $errors->has('message') ? ' has-error' : '' }}">
                 <label for="message" class="h4 ">Avis</label>
-                <textarea id="message" class="form-control" rows="5" placeholder="Votre avis" required></textarea>
+                {!! Form::textarea('message', Input::old('message'),['class'=>'form-control', 'rows' => '5']) !!}
+                @if ($errors->has('message'))
+                    <span class="help-block">
+                        <strong>{{ $errors->first('message') }}</strong>
+                    </span>
+                @endif
             </div>
 
-            <button type="submit" id="form-submit" class="btn btn-success btn-lg pull-right ">Envoyer</button>
-            <div id="msgSubmit" class="h3 text-center hidden">Envoyer !</div>
+            {{--ferme le formulaire--}}
+            {!! Form::submit('Envoyer', ['class' => 'btn btn-success btn-lg pull-right']) !!}
+            {!! Form::close() !!}
         </div>
     </div>
 

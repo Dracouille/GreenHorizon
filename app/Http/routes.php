@@ -26,7 +26,7 @@ Route::get('/contact', function () {
 
 //Routes Avis
 Route::get('/avis', 'ComController@index')->name('avis');
-//Route::post('/devoir/new', 'DevoirController@store');
+Route::post('/avis', 'ComController@store');
 
 //Admin
 Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
