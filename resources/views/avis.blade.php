@@ -16,10 +16,12 @@
 
 
             {{--Message de confirm--}}
-            @if (session('status'))
-                <div class="alert alert-success">
-                    {{ session('status') }}
-                </div>
+            @if(Session::has('toasts'))
+                @foreach(Session::get('toasts') as $toast)
+                    <div class="alert alert-success fade in">
+                        {{ $toast['message'] }}
+                    </div>
+                @endforeach
             @endif
 
 
@@ -41,8 +43,13 @@
                     </div>
                 </div>
             @endforeach
-            <br>
 
+
+            {{--Pagination--}}
+            <center style="margin-top: -3%">
+                {{$MesCom->links() }}
+            </center>
+            <br>
 
 
             {{--Poster un message--}}
@@ -63,7 +70,7 @@
             <div class="row">
                 <div class="form-group col-sm-6 {{ $errors->has('name') ? ' has-error' : '' }}">
                     <label for="name" class="h4">Qui êtes vous ?</label>
-                    {!! Form::text('name', Input::old('name'),['class'=>'form-control']) !!}
+                    {!! Form::text('name', Input::old('name'),['class'=>'form-control', 'placeholder'=>'Votre nom', 'required']) !!}
                     @if ($errors->has('name'))
                         <span class="help-block">
                             <strong>{{ $errors->first('name') }}</strong>
@@ -73,7 +80,7 @@
 
                 <div class="form-group col-sm-6 {{ $errors->has('resume') ? ' has-error' : '' }}">
                     <label for="resume" class="h4">Résumer / Titre</label>
-                    {!! Form::text('resume', Input::old('resume'),['class'=>'form-control']) !!}
+                    {!! Form::text('resume', Input::old('resume'),['class'=>'form-control', 'placeholder'=>'Votre titre', 'required']) !!}
                     @if ($errors->has('resume'))
                         <span class="help-block">
                             <strong>{{ $errors->first('resume') }}</strong>
@@ -84,7 +91,7 @@
 
             <div class="form-group {{ $errors->has('message') ? ' has-error' : '' }}">
                 <label for="message" class="h4 ">Avis</label>
-                {!! Form::textarea('message', Input::old('message'),['class'=>'form-control', 'rows' => '5']) !!}
+                {!! Form::textarea('message', Input::old('message'), ['class'=>'form-control', 'rows' => '5', 'placeholder'=>'Votre message', 'required']) !!}
                 @if ($errors->has('message'))
                     <span class="help-block">
                         <strong>{{ $errors->first('message') }}</strong>

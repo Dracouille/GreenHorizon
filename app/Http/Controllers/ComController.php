@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 //use Barryvdh\Debugbar\Middleware\Debugbar;
 use Barryvdh\Debugbar\Facade as Debugbar;
+use Toast;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Redirect;
@@ -37,17 +38,17 @@ class ComController extends Controller
     public function index()
     {
         $MesCom = Com::where("Valide_com","=", 1)
-            ->orderBy('Date_Com','desc')->get();
+            ->orderBy('Date_Com','desc')
+//            ->simplePaginate(2);
+            ->paginate(2);
 
         return view('avis',['MesCom' => $MesCom]);
     }
-
 
     public function create()
     {
         //
     }
-
 
     public function store(Request $request)
     {
@@ -68,10 +69,11 @@ class ComController extends Controller
             $com->Valide_com    = 0;
             $com->save();
 
-            return Redirect::to('/avis')->with('status', 'Merci pour votre avis');
+            Toast::success('Merci pour votre avis', 'Merci');
+
+            return Redirect::to('/avis');
         }
     }
-
 
     public function show($id)
     {
