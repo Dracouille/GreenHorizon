@@ -20,8 +20,15 @@
                 <td>{{$value->Titre_com}}</td>
                 <td>{{$value->Contenu_com}}</td>
                 <td>
-                    <button class="btn btn-success btn-sm" href="">V</button>
-                    <button class="btn btn-danger btn-sm" href="">X</button>
+                    <center>
+                        <a href="{{ route('ValideCom', ['id' => $value->ID_com]) }}">
+                            <button class="btn btn-success btn-sm">V</button>
+                        </a>
+                        <a href="{{ route('DeleteCom', ['id' => $value->ID_com]) }}">
+                            <button class="btn btn-danger btn-sm">X</button>
+                        </a>
+
+                    </center>
                 </td>
             </tr>
         @endforeach

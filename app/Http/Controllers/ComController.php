@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Http\Request;
 use App\Com;
+
 use App\Http\Requests;
 use Carbon\Carbon;
 
@@ -39,8 +40,7 @@ class ComController extends Controller
     {
         $MesCom = Com::where("Valide_com","=", 1)
             ->orderBy('Date_Com','desc')
-//            ->simplePaginate(2);
-            ->paginate(2);
+            ->paginate(5);
 
         return view('avis',['MesCom' => $MesCom]);
     }
@@ -80,22 +80,40 @@ class ComController extends Controller
         //
     }
 
-
     public function edit($id)
     {
         //
     }
-
 
     public function update(Request $request, $id)
     {
         //
     }
 
-
     public function destroy($id)
     {
         //
+    }
+
+    public function ValideCom($id)
+    {
+        $com = Com::find($id);
+        if (!$com == null) {
+            $com->Valide_com = 1;
+            $com->save();
+        }
+
+        return redirect()->route('ComAValider');
+    }
+
+    public function delete($id)
+    {
+        $com = Com::find($id);
+        if (!$com == null) {
+            $com->delete();
+        }
+
+        return redirect()->route('ComAValider');
     }
 
 }

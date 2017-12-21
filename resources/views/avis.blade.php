@@ -91,7 +91,7 @@
 
             <div class="form-group {{ $errors->has('message') ? ' has-error' : '' }}">
                 <label for="message" class="h4 ">Avis</label>
-                {!! Form::textarea('message', Input::old('message'), ['class'=>'form-control', 'rows' => '5', 'placeholder'=>'Votre message', 'required']) !!}
+                {!! Form::textarea('message', Input::old('message'), ['class'=>'form-control', 'maxlength'=>'500', 'rows' => '5', 'placeholder'=>'Votre message', 'required']) !!}
                 @if ($errors->has('message'))
                     <span class="help-block">
                         <strong>{{ $errors->first('message') }}</strong>

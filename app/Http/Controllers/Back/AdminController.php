@@ -29,9 +29,14 @@ class AdminController extends Controller
         return view('back.com.com_valide', compact('notif', 'NonLu'));
     }
 
-    public function ValideCom()
+    public function ValideCom($id)
     {
+        $com = Com::where("ID_com","=", $id)->get();
 
+        $com->Valide_com = 1;
+        $com->save();
+
+        $this->ComAValider();
     }
 
 
