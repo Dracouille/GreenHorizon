@@ -113,7 +113,8 @@ class ComController extends Controller
             $com->delete();
         }
 
-        return redirect()->route('ComAValider');
+//        return redirect()->route('ComAValider');
+        return redirect::back();
     }
 
 }

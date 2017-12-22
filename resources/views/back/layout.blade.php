@@ -184,19 +184,19 @@ desired effect
 
         <li><a href="#"><i class="fa fa-fw fa-picture-o"></i> <span>Photos</span></a></li>
 
-        <li><a href="{{URL::route('ComAValider')}}"><i class="fa fa-fw fa-comment"></i> <span>Commentaires</span></a></li>
+{{--        <li><a href="{{URL::route('ComAValider')}}"><i class="fa fa-fw fa-comment"></i> <span>Commentaires</span></a></li>--}}
 
-        {{--<li class="treeview">
-          <a href="#"><i class="fa fa-fw fa-user"></i> <span>Utilisateurs</span>
+        <li class="treeview">
+          <a href="#"><i class="fa fa-fw fa-user"></i> <span>Commentaires</span>
             <span class="pull-right-container">
           <i class="fa fa-angle-left pull-right"></i>
         </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="#">Liste</a></li>
-            <li><a href="#">Créer</a></li>
+            <li><a href="{{URL::route('ComAValider')}}">A valider</a></li>
+            <li><a href="{{URL::route('ComListe')}}">Liste</a></li>
           </ul>
-        </li>--}}
+        </li>
       </ul>
       <!-- /.sidebar-menu -->
 

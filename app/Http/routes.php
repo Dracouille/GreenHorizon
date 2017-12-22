@@ -32,6 +32,7 @@ Route::post('/avis', 'ComController@store');
 Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
 	Route::get('/', 'Back\AdminController@index')->name('AdminIndex');
 	Route::get('/commentaire/affiche', 'Back\AdminController@ComAValider')->name('ComAValider');
+	Route::get('/commentaire/liste', 'Back\AdminController@ListeCom')->name('ComListe');
 	Route::get('/commentaire/valide/{id}', 'ComController@ValideCom')->name('ValideCom');
 	Route::get('/commentaire/delete/{id}', 'ComController@delete')->name('DeleteCom');
 });

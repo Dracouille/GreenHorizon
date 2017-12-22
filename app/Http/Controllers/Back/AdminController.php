@@ -29,6 +29,17 @@ class AdminController extends Controller
         return view('back.com.com_valide', compact('notif', 'NonLu'));
     }
 
+    public function ListeCom()
+    {
+        $notif = $this->Notif();
+
+        $Com = Com::where("Valide_com","=", 1)
+            ->orderBy('Date_Com','desc')
+            ->paginate(5);
+
+        return view('back.com.com_liste', compact('notif', 'Com'));
+    }
+
     public function ValideCom($id)
     {
         $com = Com::where("ID_com","=", $id)->get();
@@ -38,7 +49,6 @@ class AdminController extends Controller
 
         $this->ComAValider();
     }
-
 
     public function Notif()
     {

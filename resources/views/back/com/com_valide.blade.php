@@ -1,7 +1,19 @@
 @extends('back.layout')
 @section('title', 'Gestion des commentaires')
-@section('desc', 'test')
+@section('desc', 'Liste des commentaires à valider')
 @section('main')
+
+    <script>
+        function ConfirmBack()
+        {
+            var x = confirm("Supprimer le commentaire ?");
+            if (x)
+                return true;
+            else
+                return false;
+        }
+    </script>
+
 
     <table class="table table-hover table-striped table-bordered">
         <thead class="thead-inverse">
@@ -24,7 +36,7 @@
                         <a href="{{ route('ValideCom', ['id' => $value->ID_com]) }}">
                             <button class="btn btn-success btn-sm">V</button>
                         </a>
-                        <a href="{{ route('DeleteCom', ['id' => $value->ID_com]) }}">
+                        <a onclick="return ConfirmBack()" href="{{ route('DeleteCom', ['id' => $value->ID_com]) }}">
                             <button class="btn btn-danger btn-sm">X</button>
                         </a>
 
