@@ -6,10 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 
-class GalerieController extends Controller
+class AlbumController extends Controller
 {
-    public function index(){
-
-
-    }
+    //
 }

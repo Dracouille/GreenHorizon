@@ -31,10 +31,17 @@ Route::post('/avis', 'ComController@store');
 //Admin
 Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
 	Route::get('/', 'Back\AdminController@index')->name('AdminIndex');
+	//commentaires
 	Route::get('/commentaire/affiche', 'Back\AdminController@ComAValider')->name('ComAValider');
 	Route::get('/commentaire/liste', 'Back\AdminController@ListeCom')->name('ComListe');
 	Route::get('/commentaire/valide/{id}', 'ComController@ValideCom')->name('ValideCom');
 	Route::get('/commentaire/delete/{id}', 'ComController@delete')->name('DeleteCom');
+	//Album
+    Route::get('/album/typeimage/index', 'TypeImageController@index')->name('AdminIndexTypeImage');
+    Route::post('/album/typeimage/index', 'TypeImageController@store')->name('AdminStoreTypeImage');
+    Route::get('/album/typeimage/delete/{id}', 'TypeImageController@delete')->name('AdminDeleteTypeImage');
+    Route::get('/album/typeimage/modifier/{id}', 'TypeImageController@edit')->name('AdminEditTypeImage');
+    Route::post('/album/typeimage/modifier/{id}', 'TypeImageController@update')->name('AdminUpdateTypeImage');
 });
 
 
