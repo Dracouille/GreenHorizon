@@ -46,6 +46,9 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
     Route::get('/album/image/index', 'AlbumController@index')->name('AdminIndexImage');
     Route::get('/album/image/gestion/{id}', 'AlbumController@GestionPhotoGroupe')->name('AdminGestionImageType');
     Route::get('/album/image/delete/{id}', 'AlbumController@delete')->name('AdminDeleteImage');
+    Route::get('/album/image/ordre/{liste}', 'AlbumController@Ordre')->name('AdminOrdreImage');
+    Route::get('/album/image/import/{id}', 'AlbumController@create')->name('AdminCreateImage');
+    Route::post('/album/image/import/{id}', 'AlbumController@store')->name('AdminStoreImage');
 });
 
 

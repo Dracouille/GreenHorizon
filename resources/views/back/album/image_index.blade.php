@@ -20,7 +20,7 @@
                 <td>{{ $NbPhotos[$value->ID_type_image]}}</td>
                 <td>{{$value->Nom_type_image}}</td>
                 <td>
-                    <a href="{{ route('AdminEditTypeImage', ['id' => $value->ID_type_image]) }}">
+                    <a href="{{ route('AdminCreateImage', ['id' => $value->ID_type_image]) }}">
                         <button class="btn btn-default btn-sm">
                             <img src="{{asset('img/icon/import-m.png')}}"/>
                         </button>

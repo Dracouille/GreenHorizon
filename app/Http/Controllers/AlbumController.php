@@ -33,9 +33,14 @@ class AlbumController extends Controller
         return view('back.album.image_index', compact('notif', 'MesType', 'NbPhotos'));
     }
 
-    public function create()
+    public function create($id)
     {
-        //
+        //Compte les notif
+        $notif = $this->Notif();
+
+        $MonType = Type_Image::find($id);
+
+        return view('back.album.image_import', compact('notif', 'MonType'));
     }
 
     public function store(Request $request)
@@ -102,9 +107,31 @@ class AlbumController extends Controller
         $notif = $this->Notif();
 
         $ListeImage = Album::where("ID_type_image","=", $id)
-            ->orderby('chantier_image', 'ordre_image')
+            ->orderby('ordre_image')
             ->get();
 
         return view('back.album.image_gestion_type', compact('notif', 'ListeImage'));
+    }
+
+    public function Ordre($liste)
+    {
+        $ordre = 1;
+
+        //Sépare la chaine avec le &
+        $item = explode("&", $liste);
+
+        //boucle sur le tableau
+        foreach ($item as $val => $valeur) {
+            //select l'id
+            $ID = explode("=", $valeur);
+
+            //save
+            $MonImage = Album::find($ID[1]);
+            $MonImage->ordre_image = $ordre;
+            $MonImage->save();
+            $ordre++;
+        }
+
+        return redirect::back();
     }
 }
