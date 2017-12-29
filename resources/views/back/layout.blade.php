@@ -192,7 +192,7 @@ desired effect
           </a>
           <ul class="treeview-menu">
             <li><a href="{{URL::route('AdminIndexTypeImage')}}">Types de chantiers</a></li>
-{{--            <li><a href="{{URL::route('ComListe')}}">Liste</a></li>--}}
+            <li><a href="{{URL::route('AdminIndexImage')}}">Gestion des photos</a></li>
           </ul>
         </li>
 

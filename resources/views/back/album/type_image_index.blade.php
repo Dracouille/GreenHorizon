@@ -41,7 +41,7 @@
                         </a>
                         <a href="{{ route('AdminEditTypeImage', ['id' => $value->ID_type_image]) }}">
                             <button class="btn btn-default btn-sm">
-                                <img src="{{asset('img/update.png')}}"/>
+                                <img src="{{asset('img/icon/update-s.png')}}"/>
                             </button>
                         </a>
                     </center>
