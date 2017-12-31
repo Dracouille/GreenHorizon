@@ -23,9 +23,13 @@
                 <img style =" width:25% " class="img-responsive img-border img-left" src="img/intro-pic.jpg" alt="">
                 <hr class="visible-xs">
 
-                <p>The boxes used in this template are nested inbetween a normal Bootstrap row and the start of your column layout. The boxes will be full-width boxes, so if you want to make them smaller then you will need to customize.</p>
-                <p>A huge thanks to <a href="http://google.com/" target="_blank">Death to the Stock Photo</a> for allowing us to use the beautiful photos that make this template really come to life. When using this template, make sure your photos are decent. Also make sure that the file size on your photos is kept to a minumum to keep load times to a minimum.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc placerat diam quis nisl vestibulum dignissim. In hac habitasse platea dictumst. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+                <p>Après 15 ans passés au service d’une famille princière, j’ai créé la société Green Horizon afin de transmettre tout mon savoir-faire à mes employés et apprentis, et de le mettre au service du plus grand nombre.</p>
+                <p>Nos employés, souriants et passionnés par leur métier de paysagiste, interviennent chez vous, en toute saisons, vêtus aux couleurs de la société, pour des conseilles personnalisés sur vos projets paysager et pour réaliser des interventions de qualités en toute discrétion et dans un respect de l’environnement.</p>
+                <p>De nombreuses personnes nous ont déjà fait confiance depuis l'ouverture de l'entreprise, alors faite comme eux, n’hésitez pas à nous contacter, nous serons ravis de vous rencontrer afin de réaliser vos prestations sur mesure et garanties sans surprises. </p>
+                <p>Nous essayer c’est nous adopter.</p>
+                <br>
+                <p>Monsieur Dominique Chemin</p>
+                <p>Gérant de la société Green Horizon</p>
             </div>
         </div>
     </div>

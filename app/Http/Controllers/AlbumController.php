@@ -2,10 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\File;
 use App\Album;
 use App\Com;
 use App\Type_Image;
@@ -43,13 +46,37 @@ class AlbumController extends Controller
         return view('back.album.image_import', compact('notif', 'MonType'));
     }
 
-    public function store(Request $request)
+    public function store(Request $request, $id)
     {
-        $Type = new Type_Image;
-        $Type->Nom_type_image = Input::get('name');
-        $Type->save();
 
-        return redirect()->route('AdminIndexTypeImage');
+        $Type = Type_Image::find($id);
+        $ordreimage = $this->ChercheDernier($id);
+        $path = public_path() . '/img/photos/' . $Type->ID_type_image;
+        $pathcourt = '/img/photos/' . $Type->ID_type_image;
+
+        $files = $request->file('filesToUpload');
+        if($request->hasFile('filesToUpload'))
+        {
+            if(!File::exists($path)) {
+                File::makeDirectory($path);
+            }
+
+            foreach ($files as $file) {
+                //Store file
+                $fileName = $file->getClientOriginalName();
+                $storeName = Carbon::now()->format('h-i-s') . '_' . $fileName;
+                $file->move($path, $storeName);
+
+                //Store in Dbb
+                $image = new Album();
+                $ordreimage++;
+                $image->lien_image = $pathcourt . '/' . $storeName;
+                $image->ID_type_image = $id;
+                $image->ordre_image= $ordreimage;
+                $image->save();
+            }
+        }
+        return redirect()->route('AdminIndexImage');
     }
 
     public function show($id)
@@ -62,7 +89,10 @@ class AlbumController extends Controller
         $image = Album::find($id);
 
         if (!$image == null) {
-            $image->delete();
+            if (File::exists(public_path() . $image->lien_image)){
+                File::delete(public_path() . $image->lien_image);
+                $image->delete();
+            }
         }else{
             Session::flash('message', "Impossible de supprimer");
         }
@@ -110,7 +140,7 @@ class AlbumController extends Controller
             ->orderby('ordre_image')
             ->get();
 
-        return view('back.album.image_gestion_type', compact('notif', 'ListeImage'));
+        return view('back.album.image_gestion_type', compact('notif', 'ListeImage', 'id'));
     }
 
     public function Ordre($liste)
@@ -134,4 +164,23 @@ class AlbumController extends Controller
 
         return redirect::back();
     }
+
+    public function ChercheDernier($id){ //ID des type
+        $image = Album::where("ID_type_image","=", $id)->max('ordre_image');;
+
+        return $image;
+    }
+
+    public function VideTout($id){ //ID des type
+        $album = Album::where("ID_type_image","=", $id)->get();
+
+        foreach ($album as $photo) {
+            if (File::exists(public_path() . $photo->lien_image)){
+                File::delete(public_path() . $photo->lien_image);
+                $photo->delete();
+            }
+        }
+        return redirect()->route('AdminIndexImage');
+    }
+
 }

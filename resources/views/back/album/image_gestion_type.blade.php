@@ -4,17 +4,6 @@
 @section('main')
 
     <head>
-        <script>
-            function ConfirmDel()
-            {
-                var x = confirm("Valider la suppression ?");
-                if (x)
-                    return true;
-                else
-                    return false;
-            }
-        </script>
-
         <style>
             #sortable { list-style-type: none; margin: 0; padding: 0; }
         </style>
@@ -33,7 +22,10 @@
     @if (!$ListeImage -> isEmpty())
         <center>
             <a class="save">
-                {!! Form::button('Enregistrer les positions', ['class' => 'btn save btn-success btn-block', 'style' => 'width:80%']) !!}
+                {!! Form::button('Enregistrer les positions', ['class' => 'col-lg-10 btn save btn-success']) !!}
+            </a>
+            <a class="supp" onclick="return ConfirmVide()" href="{{ route('AdminDeleteToutImage', ['id' => $id]) }}">
+                {!! Form::button('Vider', ['class' => ' col-lg-2 btn btn-danger pull-right']) !!}
             </a>
         </center>
     @endif
@@ -88,6 +80,24 @@
             window.location.href=url;
 
         });
+
+        function ConfirmDel()
+        {
+            var x = confirm("Valider la suppression ?");
+            if (x)
+                return true;
+            else
+                return false;
+        }
+
+        function ConfirmVide()
+        {
+            var x = confirm("Vider le type ?");
+            if (x)
+                return true;
+            else
+                return false;
+        }
 
     </script>
 
