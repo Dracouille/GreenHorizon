@@ -15,9 +15,11 @@ Route::get('/', function () {
     return view('welcome');
 })->name('home');
 
-Route::get('/galerie', function () {
-    return view('galerie');
-})->name('galerie');
+//Route::get('/galerie', function () {
+//    return view('galerie');
+//})->name('galerie');
+
+Route::get('/galerie', 'AlbumController@indexFront')->name('galerieindexfront');
 
 Route::get('/contact', function () {
     return view('contact');

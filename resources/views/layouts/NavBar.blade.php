@@ -5,7 +5,7 @@
 <!-- <div class="address-bar">Paysagiste</div> -->
 
 <!-- Navigation -->
-<nav class="navbar navbar-default" role="navigation">
+<nav class="navbar navbar-default" role="navigation" style="padding: 0">
     <div class="container">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
@@ -26,7 +26,7 @@
                     <a href="{{route('home')}}">Accueil</a>
                 </li>
                 <li>
-                    <a href="{{route('galerie')}}">Photos</a>
+                    <a href="{{route('galerieindexfront')}}">Photos</a>
                 </li>
                 <li>
                     <a href="{{route('contact')}}">Contact</a>

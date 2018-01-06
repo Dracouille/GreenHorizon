@@ -183,4 +183,14 @@ class AlbumController extends Controller
         return redirect()->route('AdminIndexImage');
     }
 
+    public function indexFront(){
+
+        $MesFav = Album::where("favoris_image","=", 1)->get();
+
+
+        DebugBar:info($MesFav);
+
+        return view('galerie', compact('MesFav'));
+    }
+
 }
